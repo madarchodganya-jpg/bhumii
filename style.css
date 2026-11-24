@@ -1,0 +1,83 @@
+:root{--burg:#4a0d1f;--burg2:#7a1c36;--blush:#f8d7dd;--cream:#fff6ec;--rose:#e0b4a0;--rose2:#c98b73}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Playfair Display',Georgia,serif;color:var(--cream);overflow-x:hidden;
+  background:radial-gradient(circle at 20% 10%,#7a1c36 0,transparent 50%),radial-gradient(circle at 80% 90%,#5c1228 0,transparent 55%),var(--burg);
+  background-attachment:fixed}
+[hidden]{display:none!important}
+.screen{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:4.5rem 1.2rem;gap:1.4rem;position:relative}
+.script{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(2.2rem,8vw,4rem);line-height:1.2;
+  background:linear-gradient(90deg,var(--rose),#fff,var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{letter-spacing:.4em;text-transform:uppercase;color:var(--rose);font-size:.8rem}
+.lead,.final-box p{max-width:36rem;font-size:clamp(1rem,3.8vw,1.25rem);line-height:1.8;color:var(--blush);font-style:italic}
+.btn{font:inherit;font-size:1rem;padding:.9rem 1.8rem;border:0;border-radius:999px;cursor:pointer;color:var(--burg);
+  background:linear-gradient(135deg,#f6d3c2,var(--rose2));box-shadow:0 6px 24px rgba(224,180,160,.35);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(224,180,160,.55)}
+.btn:active{transform:scale(.96)}
+.btn.ghost{background:transparent;color:var(--rose);border:1px solid var(--rose);box-shadow:none}
+.pulse{animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(246,211,194,.6)}50%{box-shadow:0 0 0 18px rgba(246,211,194,0)}}
+button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.fade-in{animation:fade 1s both}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* floating hearts */
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.heart{position:absolute;bottom:-40px;animation:rise linear forwards;opacity:.8;text-shadow:0 0 10px rgba(255,150,170,.8)}
+@keyframes rise{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+.screen>*,.final-box{position:relative;z-index:2}
+
+/* card */
+.card{position:relative;width:min(88vw,360px);height:280px;border:0;background:none;cursor:pointer;perspective:1000px;font:inherit}
+.card-in,.card-front{position:absolute;inset:0;border-radius:18px;display:flex;align-items:center;justify-content:center;padding:1.4rem}
+.card-in{background:linear-gradient(160deg,var(--cream),var(--blush));color:var(--burg);font-style:italic;line-height:1.6;font-size:.98rem;
+  border:2px solid var(--rose);box-shadow:0 14px 40px rgba(0,0,0,.4)}
+.card-front{flex-direction:column;gap:.6rem;background:linear-gradient(135deg,var(--burg2),#a02a4b);border:2px solid var(--rose);
+  transform-origin:left center;transition:transform 1s ease;backface-visibility:hidden;box-shadow:0 14px 40px rgba(0,0,0,.4)}
+.card-front .big{font-size:4rem}.card-front small{color:var(--rose)}
+.card.open .card-front{transform:rotateY(-160deg)}
+.card.open{height:340px}
+
+/* envelope */
+.envelope{position:relative;width:min(86vw,320px);height:210px;border:0;cursor:pointer;border-radius:8px;font:inherit;
+  background:linear-gradient(160deg,#f3c9bd,var(--rose2));box-shadow:0 14px 40px rgba(0,0,0,.45);display:flex;align-items:flex-end;justify-content:center;padding-bottom:12px}
+.envelope small{color:var(--burg)}
+.flap{position:absolute;top:0;left:0;right:0;height:60%;background:linear-gradient(#e7b5a4,#d9a08c);clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:top;transition:transform .8s}
+.seal{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--burg2);color:#ffd;display:grid;place-items:center;z-index:2;transition:opacity .4s}
+.envelope.open .flap{transform:rotateX(180deg)}.envelope.open .seal{opacity:0}
+.paper{width:min(92vw,520px);padding:2rem 1.6rem;border-radius:6px;color:#3b2a2a;text-align:left;
+  background:repeating-linear-gradient(#fffaf0 0,#fffaf0 31px,#efe3cf 32px);box-shadow:0 18px 50px rgba(0,0,0,.5);transform:rotate(-.6deg)}
+.paper p{font-family:'Caveat',cursive;font-size:clamp(1.25rem,4.6vw,1.55rem);line-height:32px;margin-bottom:32px;opacity:0;transform:translateY(8px);transition:opacity 1.2s,transform 1.2s}
+.paper p.show{opacity:1;transform:none}
+.sign{font-family:'Great Vibes',cursive!important;color:var(--burg2)}
+.paper .sign{font-size:1.9rem!important;line-height:1.5!important}
+
+/* gallery */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;width:min(100%,900px)}
+.photo{background:var(--cream);color:var(--burg);padding:8px 8px 10px;border-radius:14px;border:2px solid var(--rose);
+  box-shadow:0 8px 24px rgba(0,0,0,.35);transition:transform .3s;cursor:pointer;font-size:.85rem;font-style:italic}
+.photo:hover,.photo.pop{transform:scale(1.06) rotate(-1.5deg)}
+.photo .ph{aspect-ratio:1;border-radius:10px;overflow:hidden;background:linear-gradient(135deg,var(--blush),#f3c9bd);display:grid;place-items:center;font-size:2rem;margin-bottom:6px}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* final */
+#final{overflow:hidden}
+#fw{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.final-box{display:flex;flex-direction:column;align-items:center;gap:1.2rem}
+.glow-text{font-size:clamp(2.4rem,9vw,4.4rem);animation:glow 2.5s infinite alternate}
+@keyframes glow{from{filter:drop-shadow(0 0 4px #f6d3c2)}to{filter:drop-shadow(0 0 18px #ff9fb4)}}
+#final .sign{font-size:2rem;color:var(--rose)}
+
+/* music */
+.music{position:fixed;right:12px;bottom:12px;z-index:50;display:flex;align-items:center;gap:.5rem;font:inherit;font-size:.85rem;
+  padding:.6rem 1rem;border-radius:999px;border:1px solid var(--rose);background:rgba(74,13,31,.85);color:var(--cream);cursor:pointer;backdrop-filter:blur(6px)}
+.music.on #musicIcon{animation:pulse 1.5s infinite;border-radius:50%}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.pw{font:inherit;font-size:1rem;width:min(86vw,300px);padding:.85rem 1.2rem;border-radius:999px;border:1px solid var(--rose);background:rgba(255,246,236,.08);color:var(--cream);text-align:center;outline:none}
+.pw::placeholder{color:var(--rose)}
+.pwmsg{min-height:1.2em;color:#ffb3c1;font-size:.9rem}
+.shake{animation:shake .4s}
+@keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}

@@ -1,0 +1,10 @@
+{
+  "name": "bhumi-birthday",
+  "version": "1.0.0",
+  "description": "Birthday Surprise for Bhumi",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "echo 'Static site'"
+  }
+}

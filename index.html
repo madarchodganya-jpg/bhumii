@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#4a0d1f">
+<title>For Bhumi ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;1,500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="hearts" aria-hidden="true"></div>
+<div id="yt" aria-hidden="true"></div>
+
+<!-- 1. WELCOME -->
+<section id="welcome" class="screen">
+  <p class="eyebrow">24 November</p>
+  <h1 class="script">To My Beautiful Bhumi ❤️</h1>
+  <p class="lead">Today is not just another day. Today is the day the world became a little more beautiful because you were born.</p>
+  <input id="pw" class="pw" type="password" placeholder="Enter our secret word" aria-label="Password" autocomplete="off">
+  <p id="pwMsg" class="pwmsg" role="alert"></p>
+  <button id="openBtn" class="btn pulse">Open Your Birthday Surprise ❤️</button>
+</section>
+
+<main id="main" hidden>
+  <!-- 2. CARD -->
+  <section id="card-sec" class="screen">
+    <h2 class="script">Something Special Is Waiting For You...</h2>
+    <button id="cardBtn" class="card" aria-expanded="false" aria-label="Open the birthday card">
+      <span class="card-in"><span>Some people make life beautiful just by being in it. And Bhumi, you are one of those beautiful reasons behind my smile. Your presence makes ordinary moments special, and your smile makes even the simplest days memorable. ❤️</span></span>
+      <span class="card-front"><span class="big">💝</span><small>Tap to open</small></span>
+    </button>
+    <button id="moreBtn" class="btn" hidden>One More Surprise</button>
+  </section>
+
+  <!-- 3. LETTER -->
+  <section id="letter-sec" class="screen">
+    <h2 class="script">A Letter From Your Viraj 💌</h2>
+    <button id="env" class="envelope" aria-expanded="false" aria-label="Open the letter">
+      <span class="flap"></span><span class="seal">❤</span><small>Tap to open</small>
+    </button>
+    <article id="paper" class="paper" hidden>
+      <p>My Dearest Bhumi,</p>
+      <p>Happy Birthday, my love! ❤️</p>
+      <p>I don't know if words will ever be enough to explain how special you are to me. But today, I want to try.</p>
+      <p>You are not just a person in my life; you are someone whose presence makes my world feel more beautiful. Your smile brings happiness to my heart, your little things make my days special, and even the smallest moments with you become memories I want to keep forever.</p>
+      <p>On your birthday, I wish you endless happiness, success, good health and everything your heart dreams of. May every beautiful wish of yours come true.</p>
+      <p>I don't promise that every day will be perfect, but I promise to keep choosing you, supporting you, respecting you and making efforts to see you smile.</p>
+      <p>I want you beside me not just for today's celebration, but through all the beautiful chapters that life has yet to write for us.</p>
+      <p>Thank you for being you, Bhumi. Thank you for making my life more meaningful.</p>
+      <p>Happy Birthday once again, my beautiful girl.</p>
+      <p class="sign">With all my love,<br>Forever Yours,<br>Viraj ❤️</p>
+    </article>
+  </section>
+
+  <!-- 4. PHOTOS -->
+  <section id="gallery-sec" class="screen">
+    <h2 class="script">Our Photo Memories 📸</h2>
+    <div id="grid" class="grid"></div>
+    <input id="fileIn" type="file" accept="image/*" multiple hidden>
+    <button id="addBtn" class="btn ghost">＋ Add Photos</button>
+    <button id="finalBtn" class="btn">One Last Thing ❤️</button>
+  </section>
+
+  <!-- 5. FINAL -->
+  <section id="final" class="screen">
+    <canvas id="fw" aria-hidden="true"></canvas>
+    <div class="final-box">
+      <h2 class="script">One Last Thing, Bhumi... ❤️</h2>
+      <p>Out of all the beautiful things life could have given me, having you in my life is something I will always be grateful for.</p>
+      <p>May your smile never fade, your dreams always come true, and your heart always find reasons to be happy.</p>
+      <h3 class="script glow-text">Happiest Birthday, My Bhumi! ❤️</h3>
+      <p class="sign">With Love, Viraj.</p>
+      <button id="celebrate" class="btn">🎆 Celebrate Again</button>
+    </div>
+  </section>
+</main>
+
+<button id="music" class="music" aria-label="Play music">
+  <span id="musicIcon">▶</span><span class="mt">Kesariya</span>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
